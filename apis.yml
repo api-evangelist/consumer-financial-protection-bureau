@@ -3,7 +3,7 @@ url: >-
   https://raw.githubusercontent.com/api-evangelist/consumer-financial-protection-bureau/refs/heads/main/apis.yml
 apis:
   - aid: consumer-financial-protection-bureau:consumer-financial-protection-bureau
-    name: ' Consumer Financial Protection Bureau'
+    name: Consumer Financial Protection Bureau
     tags:
       - API
     humanURL: https://www.consumerfinance.gov/
@@ -14,7 +14,7 @@ apis:
       The Consumer Complaint Database is a collection of complaints about
       consumer financial products and services that we sent to companies for
       response.
-name: ' Consumer Financial Protection Bureau'
+name: Consumer Financial Protection Bureau
 tags:
   - Federal Government
   - Consumers
@@ -22,12 +22,12 @@ type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
 created: '2024-11-25'
-modified: '2024-12-02'
+modified: '2026-03-16'
 position: Consumer
 description: >-
   The Consumer Complaint Database is a collection of complaints about consumer
   financial products and services that we sent to companies for response.
 maintainers:
   - FN: Kin Lane
-    email: info@apievangelist.com
+    email: kin@apievangelist.com
 specificationVersion: '0.19'
