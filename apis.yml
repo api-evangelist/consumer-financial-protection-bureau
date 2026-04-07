@@ -4,8 +4,7 @@ url: >-
 apis:
   - aid: consumer-financial-protection-bureau:consumer-financial-protection-bureau
     name: Consumer Financial Protection Bureau
-    tags:
-      - API
+    tags: []
     humanURL: https://www.consumerfinance.gov/
     properties:
       - url: https://www.consumerfinance.gov/
@@ -16,8 +15,8 @@ apis:
       response.
 name: Consumer Financial Protection Bureau
 tags:
-  - Federal Government
   - Consumers
+  - Federal Government
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
