@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/consumer-financial-protection-bureau/refs/heads/main/json-schema/cfpb-complaint-schema.json",
+  "title": "CFPB Consumer Complaint",
+  "description": "Schema for a complaint record returned by the CCDB API.",
+  "type": "object",
+  "properties": {
+    "complaint_id": { "type": "string" },
+    "date_received": { "type": "string", "format": "date" },
+    "date_sent_to_company": { "type": "string", "format": "date" },
+    "product": { "type": "string" },
+    "sub_product": { "type": "string" },
+    "issue": { "type": "string" },
+    "sub_issue": { "type": "string" },
+    "company": { "type": "string" },
+    "company_response": {
+      "type": "string",
+      "enum": [
+        "Closed",
+        "Closed with explanation",
+        "Closed with monetary relief",
+        "Closed with non-monetary relief",
+        "Closed with relief",
+        "Closed without relief",
+        "In progress",
+        "Untimely response"
+      ]
+    },
+    "company_public_response": { "type": "string" },
+    "consumer_consent_provided": { "type": "string" },
+    "consumer_disputed": { "type": "string" },
+    "complaint_what_happened": { "type": "string" },
+    "state": { "type": "string", "minLength": 2, "maxLength": 2 },
+    "zip_code": { "type": "string" },
+    "tags": { "type": "string" },
+    "timely": { "type": "string", "enum": ["Yes", "No"] },
+    "submitted_via": {
+      "type": "string",
+      "enum": ["Web", "Phone", "Email", "Postal mail", "Fax", "Referral"]
+    }
+  },
+  "required": ["complaint_id", "date_received", "product", "company"]
+}

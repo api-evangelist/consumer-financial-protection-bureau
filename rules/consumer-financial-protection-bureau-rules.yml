@@ -1,0 +1,87 @@
+extends:
+  - spectral:oas
+
+# Spectral linting rules for CFPB public data APIs.
+# Tuned to consumerfinance.gov and ffiec.cfpb.gov conventions: HTTPS,
+# unauthenticated public access (no security scheme required), JSON +
+# CSV outputs, and explicit year/date filters.
+rules:
+  cfpb-info-contact:
+    description: API contact information must be present.
+    severity: error
+    given: "$.info"
+    then:
+      field: contact
+      function: truthy
+
+  cfpb-server-https:
+    description: All server URLs must use HTTPS.
+    severity: error
+    given: "$.servers[*].url"
+    then:
+      function: pattern
+      functionOptions:
+        match: "^https://"
+
+  cfpb-server-cfpb-host:
+    description: Server URLs must point to a *.cfpb.gov or consumerfinance.gov host.
+    severity: warn
+    given: "$.servers[*].url"
+    then:
+      function: pattern
+      functionOptions:
+        match: "(cfpb\\.gov|consumerfinance\\.gov)"
+
+  cfpb-operation-id:
+    description: Every operation must declare a unique operationId.
+    severity: error
+    given: "$.paths[*][get,post,put,patch,delete]"
+    then:
+      field: operationId
+      function: truthy
+
+  cfpb-operation-tags:
+    description: Operations must declare at least one tag.
+    severity: warn
+    given: "$.paths[*][get,post,put,patch,delete]"
+    then:
+      field: tags
+      function: schema
+      functionOptions:
+        schema:
+          type: array
+          minItems: 1
+
+  cfpb-public-license:
+    description: Public-data APIs should declare a CC0 or other public-domain license.
+    severity: info
+    given: "$.info.license"
+    then:
+      field: name
+      function: pattern
+      functionOptions:
+        match: "(CC0|Public Domain|Creative Commons)"
+
+  cfpb-csv-or-json-content:
+    description: Responses should declare application/json or text/csv content types.
+    severity: info
+    given: "$.paths[*].get.responses['200'].content"
+    then:
+      function: schema
+      functionOptions:
+        schema:
+          type: object
+          anyOf:
+            - required: ["application/json"]
+            - required: ["text/csv"]
+
+  cfpb-error-responses:
+    description: Lookups and detail endpoints should declare 404 responses.
+    severity: info
+    given: "$.paths[?(@property.match(/\\{.*\\}/))][get].responses"
+    then:
+      function: schema
+      functionOptions:
+        schema:
+          type: object
+          required: ["404"]

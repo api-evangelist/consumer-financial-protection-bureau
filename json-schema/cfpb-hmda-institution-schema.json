@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/consumer-financial-protection-bureau/refs/heads/main/json-schema/cfpb-hmda-institution-schema.json",
+  "title": "CFPB HMDA Institution",
+  "description": "Schema for an institution returned by the HMDA Institutions API.",
+  "type": "object",
+  "properties": {
+    "lei": { "type": "string", "minLength": 20, "maxLength": 20 },
+    "activityYear": { "type": "integer" },
+    "agency": { "type": "integer" },
+    "institutionType": { "type": "string" },
+    "institutionId2017": { "type": "string" },
+    "taxId": { "type": "string" },
+    "rssd": { "type": "integer" },
+    "respondent": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "state": { "type": "string", "minLength": 2, "maxLength": 2 },
+        "city": { "type": "string" }
+      }
+    },
+    "parent": {
+      "type": "object",
+      "properties": {
+        "idRssd": { "type": "integer" },
+        "name": { "type": "string" }
+      }
+    },
+    "assets": { "type": "integer" },
+    "otherLenderCode": { "type": "integer" },
+    "topHolder": {
+      "type": "object",
+      "properties": {
+        "idRssd": { "type": "integer" },
+        "name": { "type": "string" }
+      }
+    },
+    "hmdaFiler": { "type": "boolean" },
+    "quarterlyFiler": { "type": "boolean" },
+    "quarterlyFilerHasFiledQ1": { "type": "boolean" },
+    "quarterlyFilerHasFiledQ2": { "type": "boolean" },
+    "quarterlyFilerHasFiledQ3": { "type": "boolean" }
+  },
+  "required": ["lei", "activityYear"]
+}

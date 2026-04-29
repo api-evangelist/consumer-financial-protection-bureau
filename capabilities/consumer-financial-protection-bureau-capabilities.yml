@@ -1,0 +1,130 @@
+# Naftiko capabilities profile for the Consumer Financial Protection Bureau APIs.
+# Capabilities cover the highest-leverage operations across the Consumer
+# Complaint Database (CCDB) and the HMDA Data Browser and Institutions APIs.
+provider: consumer-financial-protection-bureau
+name: Consumer Financial Protection Bureau
+description: >-
+  CFPB public data APIs: search and trends across the Consumer Complaint
+  Database, plus HMDA mortgage aggregations, raw CSV downloads, and
+  filer/institution lookups.
+capabilities:
+  - id: cfpb.complaints.search
+    name: Search consumer complaints
+    description: Full-text and faceted search of the Consumer Complaint Database.
+    api: consumer-financial-protection-bureau:ccdb
+    inputs:
+      - search_term
+      - product
+      - company
+      - state
+      - tags
+      - date_received_min
+      - date_received_max
+      - size
+      - frm
+      - sort
+      - format
+    outputs:
+      - hits
+      - aggregations
+
+  - id: cfpb.complaints.get
+    name: Get complaint by ID
+    description: Retrieve a single complaint record by complaint identifier.
+    api: consumer-financial-protection-bureau:ccdb
+    inputs:
+      - complaintId
+    outputs:
+      - complaint
+
+  - id: cfpb.complaints.trends
+    name: Get complaint trends
+    description: Aggregated complaint trends grouped by lens (product, company, issue, etc).
+    api: consumer-financial-protection-bureau:ccdb
+    inputs:
+      - lens
+      - trend_depth
+      - trend_interval
+      - date_received_min
+      - date_received_max
+    outputs:
+      - aggregations
+
+  - id: cfpb.complaints.geo-states
+    name: Get complaints by state
+    description: Aggregated complaint counts grouped by US state.
+    api: consumer-financial-protection-bureau:ccdb
+    inputs: []
+    outputs:
+      - aggregations
+
+  - id: cfpb.hmda.aggregations-nationwide
+    name: HMDA nationwide aggregations
+    description: Aggregated HMDA report across the entire United States for a given year.
+    api: consumer-financial-protection-bureau:hmda-data-browser
+    inputs:
+      - years
+      - actions_taken
+      - loan_types
+      - loan_purposes
+      - races
+      - ethnicities
+      - sexes
+    outputs:
+      - aggregations
+
+  - id: cfpb.hmda.aggregations-filtered
+    name: HMDA aggregations (filtered)
+    description: HMDA aggregations filtered by LEI, state, county, or MSA/MD.
+    api: consumer-financial-protection-bureau:hmda-data-browser
+    inputs:
+      - years
+      - leis
+      - states
+      - counties
+      - msamds
+      - actions_taken
+      - loan_types
+    outputs:
+      - aggregations
+
+  - id: cfpb.hmda.csv
+    name: HMDA CSV download
+    description: Stream raw HMDA records as CSV for the requested filters.
+    api: consumer-financial-protection-bureau:hmda-data-browser
+    inputs:
+      - years
+      - leis
+      - states
+      - counties
+    outputs:
+      - csv
+
+  - id: cfpb.hmda.filers
+    name: HMDA filer lookup
+    description: List HMDA filers for a given year.
+    api: consumer-financial-protection-bureau:hmda-data-browser
+    inputs:
+      - years
+      - states
+    outputs:
+      - filers
+
+  - id: cfpb.hmda.institutions-by-year
+    name: List HMDA institutions by year
+    description: List every institution that filed HMDA data for a given year.
+    api: consumer-financial-protection-bureau:hmda-institutions
+    inputs:
+      - year
+    outputs:
+      - institutions
+
+  - id: cfpb.hmda.institution-detail
+    name: Get HMDA institution detail
+    description: Retrieve a single institution by year and LEI.
+    api: consumer-financial-protection-bureau:hmda-institutions
+    inputs:
+      - year
+      - lei
+    outputs:
+      - institution

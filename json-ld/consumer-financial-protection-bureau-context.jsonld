@@ -1,0 +1,73 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "cfpb": "https://www.consumerfinance.gov/schema/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+
+    "Complaint": {
+      "@id": "cfpb:Complaint",
+      "@context": {
+        "id": "cfpb:complaint_id",
+        "dateReceived": {
+          "@id": "cfpb:date_received",
+          "@type": "xsd:date"
+        },
+        "dateSentToCompany": {
+          "@id": "cfpb:date_sent_to_company",
+          "@type": "xsd:date"
+        },
+        "product": "cfpb:product",
+        "subProduct": "cfpb:sub_product",
+        "issue": "cfpb:issue",
+        "subIssue": "cfpb:sub_issue",
+        "company": "cfpb:company",
+        "companyResponse": "cfpb:company_response",
+        "companyPublicResponse": "cfpb:company_public_response",
+        "consumerConsentProvided": "cfpb:consumer_consent_provided",
+        "consumerDisputed": "cfpb:consumer_disputed",
+        "complaintWhatHappened": "cfpb:complaint_what_happened",
+        "state": "schema:addressRegion",
+        "zipCode": "schema:postalCode",
+        "tags": "cfpb:tags",
+        "timely": "cfpb:timely",
+        "submittedVia": "cfpb:submitted_via"
+      }
+    },
+
+    "Institution": {
+      "@id": "cfpb:Institution",
+      "@context": {
+        "lei": "cfpb:lei",
+        "activityYear": "cfpb:activity_year",
+        "agency": "cfpb:agency",
+        "institutionType": "cfpb:institution_type",
+        "respondent": "cfpb:respondent",
+        "parent": "cfpb:parent",
+        "assets": "cfpb:assets",
+        "hmdaFiler": "cfpb:hmda_filer",
+        "quarterlyFiler": "cfpb:quarterly_filer"
+      }
+    },
+
+    "HMDARecord": {
+      "@id": "cfpb:HMDARecord",
+      "@context": {
+        "lei": "cfpb:lei",
+        "year": "cfpb:activity_year",
+        "actionTaken": "cfpb:action_taken",
+        "loanType": "cfpb:loan_type",
+        "loanPurpose": "cfpb:loan_purpose",
+        "loanAmount": "cfpb:loan_amount",
+        "state": "cfpb:state",
+        "county": "cfpb:county",
+        "censusTract": "cfpb:census_tract",
+        "applicantRace": "cfpb:applicant_race",
+        "applicantEthnicity": "cfpb:applicant_ethnicity",
+        "applicantSex": "cfpb:applicant_sex",
+        "income": "cfpb:income"
+      }
+    }
+  }
+}

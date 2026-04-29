@@ -1,0 +1,155 @@
+openapi: 3.1.0
+info:
+  title: CFPB HMDA Data Browser API
+  description: >-
+    The HMDA Data Browser API exposes Home Mortgage Disclosure Act
+    submission data published by the Consumer Financial Protection
+    Bureau. It supports nationwide and filtered aggregation reports as
+    well as raw CSV downloads for research, fair lending analysis, and
+    public reporting.
+  version: '2'
+  contact:
+    name: HMDA Operations
+    url: https://ffiec.cfpb.gov/
+servers:
+  - url: https://ffiec.cfpb.gov/v2/data-browser-api
+    description: Production HMDA Data Browser API
+paths:
+  /view/nationwide/aggregations:
+    get:
+      operationId: getNationwideAggregations
+      summary: Nationwide aggregation report
+      description: Aggregated HMDA totals across the entire United States for a given year and filter set.
+      tags:
+        - Aggregations
+      parameters:
+        - $ref: '#/components/parameters/Years'
+        - $ref: '#/components/parameters/Actions'
+        - $ref: '#/components/parameters/LoanTypes'
+        - $ref: '#/components/parameters/LoanPurposes'
+        - $ref: '#/components/parameters/Race'
+        - $ref: '#/components/parameters/Ethnicity'
+        - $ref: '#/components/parameters/Sex'
+      responses:
+        '200':
+          description: Aggregations
+          content:
+            application/json: {}
+  /view/aggregations:
+    get:
+      operationId: getAggregations
+      summary: Aggregation report by LEI or geography
+      tags:
+        - Aggregations
+      parameters:
+        - $ref: '#/components/parameters/Years'
+        - name: leis
+          in: query
+          schema: { type: array, items: { type: string } }
+        - name: states
+          in: query
+          schema: { type: array, items: { type: string, minLength: 2, maxLength: 2 } }
+        - name: msamds
+          in: query
+          schema: { type: array, items: { type: string } }
+        - name: counties
+          in: query
+          schema: { type: array, items: { type: string } }
+        - $ref: '#/components/parameters/Actions'
+        - $ref: '#/components/parameters/LoanTypes'
+      responses:
+        '200':
+          description: Aggregations
+          content:
+            application/json: {}
+  /view/nationwide/csv:
+    get:
+      operationId: getNationwideCsv
+      summary: Stream nationwide HMDA records as CSV
+      tags:
+        - CSV
+      parameters:
+        - $ref: '#/components/parameters/Years'
+        - $ref: '#/components/parameters/Actions'
+      responses:
+        '200':
+          description: CSV stream of HMDA records
+          content:
+            text/csv: {}
+  /view/csv:
+    get:
+      operationId: getCsv
+      summary: Stream HMDA records as CSV by LEI/geography
+      tags:
+        - CSV
+      parameters:
+        - $ref: '#/components/parameters/Years'
+        - name: leis
+          in: query
+          schema: { type: array, items: { type: string } }
+        - name: states
+          in: query
+          schema: { type: array, items: { type: string } }
+        - name: counties
+          in: query
+          schema: { type: array, items: { type: string } }
+      responses:
+        '200':
+          description: CSV stream
+          content:
+            text/csv: {}
+  /view/filers:
+    get:
+      operationId: listFilers
+      summary: List HMDA filers
+      tags:
+        - Filers
+      parameters:
+        - $ref: '#/components/parameters/Years'
+        - name: states
+          in: query
+          schema: { type: array, items: { type: string } }
+      responses:
+        '200':
+          description: Institutions that filed for the requested year
+          content:
+            application/json: {}
+components:
+  parameters:
+    Years:
+      name: years
+      in: query
+      required: true
+      schema:
+        type: array
+        items: { type: integer, minimum: 2018 }
+    Actions:
+      name: actions_taken
+      in: query
+      schema:
+        type: array
+        items: { type: integer, minimum: 1, maximum: 8 }
+    LoanTypes:
+      name: loan_types
+      in: query
+      schema:
+        type: array
+        items: { type: integer, minimum: 1, maximum: 4 }
+    LoanPurposes:
+      name: loan_purposes
+      in: query
+      schema:
+        type: array
+        items: { type: integer }
+    Race:
+      name: races
+      in: query
+      schema: { type: array, items: { type: string } }
+    Ethnicity:
+      name: ethnicities
+      in: query
+      schema: { type: array, items: { type: string } }
+    Sex:
+      name: sexes
+      in: query
+      schema: { type: array, items: { type: string } }

@@ -1,0 +1,111 @@
+openapi: 3.1.0
+info:
+  title: CFPB HMDA Institutions API
+  description: >-
+    The HMDA Platform Institutions API returns the financial institutions
+    registered to file Home Mortgage Disclosure Act data with the CFPB,
+    keyed by year and LEI. It is used by filers and researchers to
+    confirm filer identifiers, registration status, and contact info.
+  version: '2'
+  contact:
+    name: HMDA Operations
+    url: https://ffiec.cfpb.gov/
+servers:
+  - url: https://ffiec.cfpb.gov/v2
+    description: Production HMDA Platform
+paths:
+  /public/filers/{year}:
+    get:
+      operationId: listInstitutionsByYear
+      summary: List all institutions that filed HMDA data for a year
+      tags:
+        - Institutions
+      parameters:
+        - name: year
+          in: path
+          required: true
+          schema: { type: integer, minimum: 2018 }
+      responses:
+        '200':
+          description: List of filers
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  institutions:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Institution'
+  /public/institutions/{year}/{lei}:
+    get:
+      operationId: getInstitution
+      summary: Get a single institution by year and LEI
+      tags:
+        - Institutions
+      parameters:
+        - name: year
+          in: path
+          required: true
+          schema: { type: integer }
+        - name: lei
+          in: path
+          required: true
+          schema: { type: string, minLength: 20, maxLength: 20 }
+      responses:
+        '200':
+          description: Institution detail
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Institution'
+        '404':
+          description: Not found
+components:
+  schemas:
+    Institution:
+      type: object
+      properties:
+        lei:
+          type: string
+          minLength: 20
+          maxLength: 20
+        activityYear:
+          type: integer
+        agency:
+          type: integer
+        institutionType:
+          type: string
+        institutionId2017:
+          type: string
+        taxId:
+          type: string
+        rssd:
+          type: integer
+        respondent:
+          type: object
+          properties:
+            name: { type: string }
+            state: { type: string }
+            city: { type: string }
+        parent:
+          type: object
+          properties:
+            idRssd: { type: integer }
+            name: { type: string }
+        assets:
+          type: integer
+        otherLenderCode:
+          type: integer
+        topHolder:
+          type: object
+        hmdaFiler:
+          type: boolean
+        quarterlyFiler:
+          type: boolean
+        quarterlyFilerHasFiledQ1:
+          type: boolean
+        quarterlyFilerHasFiledQ2:
+          type: boolean
+        quarterlyFilerHasFiledQ3:
+          type: boolean
