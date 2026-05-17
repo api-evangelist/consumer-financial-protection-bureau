@@ -18,7 +18,7 @@ created: '2024-11-25'
 modified: '2026-04-29'
 position: Consumer
 specificationVersion: '0.19'
-x-type: government
+kind: government
 description: >-
   The Consumer Financial Protection Bureau (CFPB) is the U.S. federal agency
   that supervises banks, lenders, and other financial companies, enforces
@@ -93,7 +93,7 @@ common:
     url: https://www.consumerfinance.gov/
   - type: Open Tech
     url: https://cfpb.github.io/
-  - type: GitHub Organization
+  - type: GitHubOrganization
     url: https://github.com/cfpb
   - type: Data and Research
     url: https://www.consumerfinance.gov/data-research/
@@ -101,11 +101,11 @@ common:
     url: https://www.consumerfinance.gov/data-research/consumer-complaints/
   - type: HMDA Platform
     url: https://ffiec.cfpb.gov/
-  - type: Privacy Policy
+  - type: PrivacyPolicy
     url: https://www.consumerfinance.gov/privacy/
-  - type: Terms of Service
+  - type: TermsOfService
     url: https://www.consumerfinance.gov/privacy/website-privacy-policy/
-  - type: JSON-LD
+  - type: JSONLD
     url: json-ld/consumer-financial-protection-bureau-context.jsonld
   - type: JSONSchema
     url: json-schema/cfpb-complaint-schema.json
