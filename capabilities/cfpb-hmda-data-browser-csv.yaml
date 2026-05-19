@@ -1,0 +1,117 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: CFPB HMDA Data Browser API — CSV
+  description: 'CFPB HMDA Data Browser API — CSV. 2 operations. Lead operation: Stream HMDA records as CSV by LEI/geography.
+    Self-contained Naftiko capability covering one Consumer Financial Protection Bureau business surface.'
+  tags:
+  - Consumer Financial Protection Bureau
+  - CSV
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    CONSUMER_FINANCIAL_PROTECTION_BUREAU_API_KEY: CONSUMER_FINANCIAL_PROTECTION_BUREAU_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: cfpb-hmda-data-browser-csv
+    baseUri: https://ffiec.cfpb.gov/v2/data-browser-api
+    description: CFPB HMDA Data Browser API — CSV business capability. Self-contained, no shared references.
+    resources:
+    - name: view-csv
+      path: /view/csv
+      operations:
+      - name: getcsv
+        method: GET
+        description: Stream HMDA records as CSV by LEI/geography
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: leis
+          in: query
+          type: array
+        - name: states
+          in: query
+          type: array
+        - name: counties
+          in: query
+          type: array
+    - name: view-nationwide-csv
+      path: /view/nationwide/csv
+      operations:
+      - name: getnationwidecsv
+        method: GET
+        description: Stream nationwide HMDA records as CSV
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: cfpb-hmda-data-browser-csv-rest
+    port: 8080
+    description: REST adapter for CFPB HMDA Data Browser API — CSV. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/view/csv
+      name: view-csv
+      description: REST surface for view-csv.
+      operations:
+      - method: GET
+        name: getcsv
+        description: Stream HMDA records as CSV by LEI/geography
+        call: cfpb-hmda-data-browser-csv.getcsv
+        with:
+          leis: rest.leis
+          states: rest.states
+          counties: rest.counties
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/view/nationwide/csv
+      name: view-nationwide-csv
+      description: REST surface for view-nationwide-csv.
+      operations:
+      - method: GET
+        name: getnationwidecsv
+        description: Stream nationwide HMDA records as CSV
+        call: cfpb-hmda-data-browser-csv.getnationwidecsv
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: cfpb-hmda-data-browser-csv-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for CFPB HMDA Data Browser API — CSV. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: stream-hmda-records-csv-lei
+      description: Stream HMDA records as CSV by LEI/geography
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: cfpb-hmda-data-browser-csv.getcsv
+      with:
+        leis: tools.leis
+        states: tools.states
+        counties: tools.counties
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: stream-nationwide-hmda-records-csv
+      description: Stream nationwide HMDA records as CSV
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: cfpb-hmda-data-browser-csv.getnationwidecsv
+      outputParameters:
+      - type: object
+        mapping: $.
