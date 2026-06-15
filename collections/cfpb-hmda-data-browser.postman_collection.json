@@ -1,0 +1,822 @@
+{
+  "item": [
+    {
+      "id": "5c2ea05c-56c2-4eca-a3d8-fe05f588b7ac",
+      "name": "Aggregations",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9d10e483-5f4e-4637-8d70-3f3f7e1e9a8c",
+          "name": "Nationwide aggregation report",
+          "request": {
+            "name": "Nationwide aggregation report",
+            "description": {
+              "content": "Aggregated HMDA totals across the entire United States for a given year and filter set.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "view",
+                "nationwide",
+                "aggregations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "years",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "years",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "actions_taken",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "actions_taken",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "loan_types",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "loan_types",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "loan_purposes",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "loan_purposes",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "races",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "races",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "ethnicities",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "ethnicities",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sexes",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sexes",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5bd03301-3b69-44e8-bc71-2cbca77cb668",
+              "name": "Aggregations",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "view",
+                    "nationwide",
+                    "aggregations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "years",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "years",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "actions_taken",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "actions_taken",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "loan_types",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "loan_types",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "loan_purposes",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "loan_purposes",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "races",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "races",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ethnicities",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ethnicities",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sexes",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sexes",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f0819777-2b1a-4e5a-9846-fd35bae72453",
+          "name": "Aggregation report by LEI or geography",
+          "request": {
+            "name": "Aggregation report by LEI or geography",
+            "description": {},
+            "url": {
+              "path": [
+                "view",
+                "aggregations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "years",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "years",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "leis",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "leis",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "states",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "states",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "msamds",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "msamds",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "counties",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "counties",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "actions_taken",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "actions_taken",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "loan_types",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "loan_types",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "45f0c8d0-1959-45a3-952b-a1b872095cc1",
+              "name": "Aggregations",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "view",
+                    "aggregations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "years",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "years",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "leis",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "leis",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "states",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "states",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "msamds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "msamds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "counties",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "counties",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "actions_taken",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "actions_taken",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "loan_types",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "loan_types",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "68f60a19-994b-43ba-b9f1-b38aa7eab6b0",
+      "name": "CSV",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "56c4b529-66e8-45a1-bffd-98dfe25bb826",
+          "name": "Stream nationwide HMDA records as CSV",
+          "request": {
+            "name": "Stream nationwide HMDA records as CSV",
+            "description": {},
+            "url": {
+              "path": [
+                "view",
+                "nationwide",
+                "csv"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "years",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "years",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "actions_taken",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "actions_taken",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/csv"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "11a30b29-65a1-4ffb-9d8c-0613933d5acf",
+              "name": "CSV stream of HMDA records",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "view",
+                    "nationwide",
+                    "csv"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "years",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "years",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "actions_taken",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "actions_taken",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/csv"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/csv"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "25467a68-0100-482d-9183-efaed92d1ea5",
+          "name": "Stream HMDA records as CSV by LEI/geography",
+          "request": {
+            "name": "Stream HMDA records as CSV by LEI/geography",
+            "description": {},
+            "url": {
+              "path": [
+                "view",
+                "csv"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "years",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "years",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "leis",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "leis",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "states",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "states",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "counties",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "counties",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/csv"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e96faba5-ac3a-46a1-8930-4aa41891feda",
+              "name": "CSV stream",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "view",
+                    "csv"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "years",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "years",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "leis",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "leis",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "states",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "states",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "counties",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "counties",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/csv"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/csv"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "e3442272-7d5d-4d3a-a9bc-37fdffa48e58",
+      "name": "Filers",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "bffaf2ae-f257-4226-b255-278aefa07caf",
+          "name": "List HMDA filers",
+          "request": {
+            "name": "List HMDA filers",
+            "description": {},
+            "url": {
+              "path": [
+                "view",
+                "filers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "years",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "years",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "states",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "states",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ee8875ee-b252-42b7-82fd-d7a3d195d359",
+              "name": "Institutions that filed for the requested year",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "view",
+                    "filers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "years",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "years",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "states",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "states",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://ffiec.cfpb.gov/v2/data-browser-api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "1cd06bd0-4eda-4641-9fde-18be71acc150",
+    "name": "CFPB HMDA Data Browser API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The HMDA Data Browser API exposes Home Mortgage Disclosure Act submission data published by the Consumer Financial Protection Bureau. It supports nationwide and filtered aggregation reports as well as raw CSV downloads for research, fair lending analysis, and public reporting.\n\nContact Support:\n Name: HMDA Operations",
+      "type": "text/plain"
+    }
+  }
+}

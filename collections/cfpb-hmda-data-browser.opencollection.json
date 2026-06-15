@@ -1,0 +1,209 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "CFPB HMDA Data Browser API",
+    "version": "2"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Aggregations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Nationwide aggregation report",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ffiec.cfpb.gov/v2/data-browser-api/view/nationwide/aggregations",
+            "params": [
+              {
+                "name": "years",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "actions_taken",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "loan_types",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "loan_purposes",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "races",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "ethnicities",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sexes",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Aggregated HMDA totals across the entire United States for a given year and filter set."
+        },
+        {
+          "info": {
+            "name": "Aggregation report by LEI or geography",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ffiec.cfpb.gov/v2/data-browser-api/view/aggregations",
+            "params": [
+              {
+                "name": "years",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "leis",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "states",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "msamds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "counties",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "actions_taken",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "loan_types",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Aggregation report by LEI or geography"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "CSV",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Stream nationwide HMDA records as CSV",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ffiec.cfpb.gov/v2/data-browser-api/view/nationwide/csv",
+            "params": [
+              {
+                "name": "years",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "actions_taken",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Stream nationwide HMDA records as CSV"
+        },
+        {
+          "info": {
+            "name": "Stream HMDA records as CSV by LEI/geography",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ffiec.cfpb.gov/v2/data-browser-api/view/csv",
+            "params": [
+              {
+                "name": "years",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "leis",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "states",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "counties",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Stream HMDA records as CSV by LEI/geography"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Filers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List HMDA filers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ffiec.cfpb.gov/v2/data-browser-api/view/filers",
+            "params": [
+              {
+                "name": "years",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "states",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List HMDA filers"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

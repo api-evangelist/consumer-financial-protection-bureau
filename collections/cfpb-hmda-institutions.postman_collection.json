@@ -1,0 +1,269 @@
+{
+  "item": [
+    {
+      "id": "d3518a82-be74-4e33-a23a-dfc4a38844c7",
+      "name": "Institutions",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "30e656c4-bf94-4d53-8354-7513fe88fd4f",
+          "name": "List all institutions that filed HMDA data for a year",
+          "request": {
+            "name": "List all institutions that filed HMDA data for a year",
+            "description": {},
+            "url": {
+              "path": [
+                "public",
+                "filers",
+                ":year"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "year",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5e0b2da3-e47e-462a-9298-e3a30442d306",
+              "name": "List of filers",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "public",
+                    "filers",
+                    ":year"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "year",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"institutions\": [\n    {\n      \"lei\": \"stringstringstringst\",\n      \"activityYear\": 5965,\n      \"agency\": 1507,\n      \"institutionType\": \"string\",\n      \"institutionId2017\": \"string\",\n      \"taxId\": \"string\",\n      \"rssd\": 4557,\n      \"respondent\": {\n        \"name\": \"string\",\n        \"state\": \"string\",\n        \"city\": \"string\"\n      },\n      \"parent\": {\n        \"idRssd\": 3418,\n        \"name\": \"string\"\n      },\n      \"assets\": 9792,\n      \"otherLenderCode\": 7490,\n      \"topHolder\": {},\n      \"hmdaFiler\": true,\n      \"quarterlyFiler\": true,\n      \"quarterlyFilerHasFiledQ1\": true,\n      \"quarterlyFilerHasFiledQ2\": true,\n      \"quarterlyFilerHasFiledQ3\": false\n    },\n    {\n      \"lei\": \"stringstringstringst\",\n      \"activityYear\": 3846,\n      \"agency\": 1455,\n      \"institutionType\": \"string\",\n      \"institutionId2017\": \"string\",\n      \"taxId\": \"string\",\n      \"rssd\": 9846,\n      \"respondent\": {\n        \"name\": \"string\",\n        \"state\": \"string\",\n        \"city\": \"string\"\n      },\n      \"parent\": {\n        \"idRssd\": 4951,\n        \"name\": \"string\"\n      },\n      \"assets\": 7345,\n      \"otherLenderCode\": 6450,\n      \"topHolder\": {},\n      \"hmdaFiler\": true,\n      \"quarterlyFiler\": false,\n      \"quarterlyFilerHasFiledQ1\": false,\n      \"quarterlyFilerHasFiledQ2\": false,\n      \"quarterlyFilerHasFiledQ3\": true\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "34c5e7f4-ff19-4663-8a92-8e79a20eda1f",
+          "name": "Get a single institution by year and LEI",
+          "request": {
+            "name": "Get a single institution by year and LEI",
+            "description": {},
+            "url": {
+              "path": [
+                "public",
+                "institutions",
+                ":year",
+                ":lei"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "year",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "lei",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bde1449d-2775-4444-af3b-548edc98ea8f",
+              "name": "Institution detail",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "public",
+                    "institutions",
+                    ":year",
+                    ":lei"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "year",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "lei",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"lei\": \"stringstringstringst\",\n  \"activityYear\": 8495,\n  \"agency\": 5690,\n  \"institutionType\": \"string\",\n  \"institutionId2017\": \"string\",\n  \"taxId\": \"string\",\n  \"rssd\": 6201,\n  \"respondent\": {\n    \"name\": \"string\",\n    \"state\": \"string\",\n    \"city\": \"string\"\n  },\n  \"parent\": {\n    \"idRssd\": 6258,\n    \"name\": \"string\"\n  },\n  \"assets\": 6078,\n  \"otherLenderCode\": 2491,\n  \"topHolder\": {},\n  \"hmdaFiler\": true,\n  \"quarterlyFiler\": false,\n  \"quarterlyFilerHasFiledQ1\": false,\n  \"quarterlyFilerHasFiledQ2\": true,\n  \"quarterlyFilerHasFiledQ3\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "207e1ca6-f69f-48df-8f79-6565dd5df44a",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "public",
+                    "institutions",
+                    ":year",
+                    ":lei"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "year",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "lei",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://ffiec.cfpb.gov/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "7cdd3e3a-0f9e-4f57-9329-4bfec547a612",
+    "name": "CFPB HMDA Institutions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The HMDA Platform Institutions API returns the financial institutions registered to file Home Mortgage Disclosure Act data with the CFPB, keyed by year and LEI. It is used by filers and researchers to confirm filer identifiers, registration status, and contact info.\n\nContact Support:\n Name: HMDA Operations",
+      "type": "text/plain"
+    }
+  }
+}

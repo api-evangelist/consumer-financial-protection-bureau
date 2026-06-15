@@ -1,0 +1,199 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "CFPB Consumer Complaint Database API",
+    "version": "1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Search",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search complaints",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1/",
+            "params": [
+              {
+                "name": "search_term",
+                "value": "",
+                "type": "query",
+                "description": "Free-text search across complaint narratives."
+              },
+              {
+                "name": "field",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "frm",
+                "value": "",
+                "type": "query",
+                "description": "Result offset (0-based)."
+              },
+              {
+                "name": "size",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "date_received_min",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "date_received_max",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "company",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "product",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "state",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "tags",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Full-text search across the Consumer Complaint Database with faceted filters and pagination."
+        },
+        {
+          "info": {
+            "name": "Get a single complaint by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1/:complaintId/",
+            "params": [
+              {
+                "name": "complaintId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a single complaint by ID"
+        },
+        {
+          "info": {
+            "name": "Autocomplete suggestions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1/suggest/",
+            "params": [
+              {
+                "name": "text",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "size",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Autocomplete suggestions"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Trends",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Aggregated complaint trends",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1/trends/",
+            "params": [
+              {
+                "name": "lens",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "trend_depth",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "trend_interval",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "date_received_min",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "date_received_max",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns aggregated complaint counts grouped by lens (product, issue, company, etc)."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Geo",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Aggregated complaint counts by state",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1/geo/states/"
+          },
+          "docs": "Aggregated complaint counts by state"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

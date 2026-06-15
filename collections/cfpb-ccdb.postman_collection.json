@@ -1,0 +1,676 @@
+{
+  "item": [
+    {
+      "id": "58894a53-d214-4579-b61c-44378632cebe",
+      "name": "Search",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2aa28d95-2767-4070-804c-8f18384174d2",
+          "name": "Search complaints",
+          "request": {
+            "name": "Search complaints",
+            "description": {
+              "content": "Full-text search across the Consumer Complaint Database with faceted filters and pagination.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "search_term",
+                  "value": "<string>",
+                  "description": "Free-text search across complaint narratives."
+                },
+                {
+                  "disabled": false,
+                  "key": "field",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "frm",
+                  "value": "0",
+                  "description": "Result offset (0-based)."
+                },
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "25"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "date_received_min",
+                  "value": "<date>"
+                },
+                {
+                  "disabled": false,
+                  "key": "date_received_max",
+                  "value": "<date>"
+                },
+                {
+                  "disabled": false,
+                  "key": "company",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "company",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "product",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "product",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "state",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "state",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "tags",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "tags",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9c915db4-645e-48d8-9be1-f4d8c215771e",
+              "name": "Matching complaints",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search_term",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "field",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "frm",
+                      "value": "0"
+                    },
+                    {
+                      "key": "size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "format",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "date_received_min",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "date_received_max",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "company",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "company",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "product",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "product",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "state",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "state",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tags",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tags",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"hits\": {\n    \"total\": {\n      \"value\": 5568,\n      \"relation\": \"string\"\n    },\n    \"hits\": [\n      {\n        \"_source\": {\n          \"complaint_id\": \"string\",\n          \"date_received\": \"1967-12-30\",\n          \"date_sent_to_company\": \"1954-01-18\",\n          \"product\": \"string\",\n          \"sub_product\": \"string\",\n          \"issue\": \"string\",\n          \"sub_issue\": \"string\",\n          \"company\": \"string\",\n          \"company_response\": \"string\",\n          \"company_public_response\": \"string\",\n          \"consumer_consent_provided\": \"string\",\n          \"consumer_disputed\": \"string\",\n          \"complaint_what_happened\": \"string\",\n          \"state\": \"string\",\n          \"zip_code\": \"string\",\n          \"tags\": \"string\",\n          \"timely\": \"string\",\n          \"submitted_via\": \"string\"\n        },\n        \"_id\": \"string\",\n        \"_score\": 7281.5967045977995\n      },\n      {\n        \"_source\": {\n          \"complaint_id\": \"string\",\n          \"date_received\": \"1957-02-07\",\n          \"date_sent_to_company\": \"1969-03-03\",\n          \"product\": \"string\",\n          \"sub_product\": \"string\",\n          \"issue\": \"string\",\n          \"sub_issue\": \"string\",\n          \"company\": \"string\",\n          \"company_response\": \"string\",\n          \"company_public_response\": \"string\",\n          \"consumer_consent_provided\": \"string\",\n          \"consumer_disputed\": \"string\",\n          \"complaint_what_happened\": \"string\",\n          \"state\": \"string\",\n          \"zip_code\": \"string\",\n          \"tags\": \"string\",\n          \"timely\": \"string\",\n          \"submitted_via\": \"string\"\n        },\n        \"_id\": \"string\",\n        \"_score\": 273.81194413006796\n      }\n    ]\n  },\n  \"aggregations\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2a6d889f-97aa-4022-9521-e3148c483a57",
+          "name": "Get a single complaint by ID",
+          "request": {
+            "name": "Get a single complaint by ID",
+            "description": {},
+            "url": {
+              "path": [
+                ":complaintId",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "complaintId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4f93db6f-9128-4974-b39e-e4683d8234e3",
+              "name": "A single complaint",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":complaintId",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "complaintId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"complaint_id\": \"string\",\n  \"date_received\": \"1985-01-28\",\n  \"date_sent_to_company\": \"2017-07-06\",\n  \"product\": \"string\",\n  \"sub_product\": \"string\",\n  \"issue\": \"string\",\n  \"sub_issue\": \"string\",\n  \"company\": \"string\",\n  \"company_response\": \"string\",\n  \"company_public_response\": \"string\",\n  \"consumer_consent_provided\": \"string\",\n  \"consumer_disputed\": \"string\",\n  \"complaint_what_happened\": \"string\",\n  \"state\": \"string\",\n  \"zip_code\": \"string\",\n  \"tags\": \"string\",\n  \"timely\": \"string\",\n  \"submitted_via\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a945cd64-0f03-4805-88bf-23f3cac1d3f1",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":complaintId",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "complaintId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e516f612-1b84-48a0-b9cf-2c617c57fb62",
+          "name": "Autocomplete suggestions",
+          "request": {
+            "name": "Autocomplete suggestions",
+            "description": {},
+            "url": {
+              "path": [
+                "suggest",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "text",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "10"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "33f2c974-ca68-4946-81e6-6f15692439be",
+              "name": "Suggestion list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "suggest",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "text",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "size",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "ac22d443-87cc-4fa9-a3a8-75f7ccbf895b",
+      "name": "Trends",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b737ecfd-14ee-4120-bd21-583677843786",
+          "name": "Aggregated complaint trends",
+          "request": {
+            "name": "Aggregated complaint trends",
+            "description": {
+              "content": "Returns aggregated complaint counts grouped by lens (product, issue, company, etc).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "trends",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "lens",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "trend_depth",
+                  "value": "5"
+                },
+                {
+                  "disabled": false,
+                  "key": "trend_interval",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "date_received_min",
+                  "value": "<date>"
+                },
+                {
+                  "disabled": false,
+                  "key": "date_received_max",
+                  "value": "<date>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "295ca19b-1946-4ffb-b8c9-2c871532c509",
+              "name": "Aggregated trends",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trends",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lens",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "trend_depth",
+                      "value": "5"
+                    },
+                    {
+                      "key": "trend_interval",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "date_received_min",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "date_received_max",
+                      "value": "<date>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "ea213d6d-ba37-44ef-9ba9-1181c9294369",
+      "name": "Geo",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "046063f2-4a05-4e78-831a-ead794996352",
+          "name": "Aggregated complaint counts by state",
+          "request": {
+            "name": "Aggregated complaint counts by state",
+            "description": {},
+            "url": {
+              "path": [
+                "geo",
+                "states",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "76848f23-e7c1-4bbe-8467-531bfc4ec334",
+              "name": "Per-state aggregation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "geo",
+                    "states",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "382b947b-d54c-4fa9-a2d0-70c96d72cc61",
+    "name": "CFPB Consumer Complaint Database API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Public REST + JSON API for searching the Consumer Financial Protection Bureau's Consumer Complaint Database (CCDB), a daily-updated record of complaints submitted by consumers about financial products and services and the companies that respond to them. The API powers the public CCDB search experience at consumerfinance.gov/data-research/consumer-complaints and is documented at cfpb.github.io/ccdb5-api.\n\nContact Support:\n Name: CFPB Open Tech",
+      "type": "text/plain"
+    }
+  }
+}

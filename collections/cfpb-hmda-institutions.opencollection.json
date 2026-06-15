@@ -1,0 +1,59 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "CFPB HMDA Institutions API",
+    "version": "2"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Institutions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all institutions that filed HMDA data for a year",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ffiec.cfpb.gov/v2/public/filers/:year",
+            "params": [
+              {
+                "name": "year",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List all institutions that filed HMDA data for a year"
+        },
+        {
+          "info": {
+            "name": "Get a single institution by year and LEI",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ffiec.cfpb.gov/v2/public/institutions/:year/:lei",
+            "params": [
+              {
+                "name": "year",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "lei",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a single institution by year and LEI"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
