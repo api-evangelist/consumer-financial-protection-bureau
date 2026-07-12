@@ -79,6 +79,8 @@ apis:
       Identifier (LEI). Used by filers and researchers to confirm filer identifiers, registration status, and contact
       info.
 common:
+  - type: DomainSecurity
+    url: security/consumer-financial-protection-bureau-domain-security.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/consumer-financial-protection-bureau
   - type: Website
@@ -105,6 +107,8 @@ common:
     url: json-schema/cfpb-hmda-institution-schema.json
   - type: Spectral
     url: rules/consumer-financial-protection-bureau-rules.yml
+  - url: https://www.consumerfinance.gov/about-us/newsroom/feed/
+    type: Blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
