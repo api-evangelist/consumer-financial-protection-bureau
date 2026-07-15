@@ -1,0 +1,134 @@
+generated: '2026-07-15'
+method: generated
+source: openapi/cfpb-ccdb-openapi.yml, openapi/cfpb-hmda-data-browser-openapi.yml, openapi/cfpb-hmda-institutions-openapi.yml
+description: Recommended x-agentic-access execution contracts, classified heuristically from
+  the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
+  audience per deployment. See research/curity/agentic-governance/.
+summary:
+  operations: 12
+  by_action_class:
+    connected: 12
+  by_consequence:
+    read: 12
+  human_in_the_loop_required: 0
+operations:
+- path: /
+  method: get
+  operationId: searchComplaints
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /{complaintId}/
+  method: get
+  operationId: getComplaint
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /trends/
+  method: get
+  operationId: getTrends
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /geo/states/
+  method: get
+  operationId: getGeoStates
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /suggest/
+  method: get
+  operationId: getSuggestions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /view/nationwide/aggregations
+  method: get
+  operationId: getNationwideAggregations
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /view/aggregations
+  method: get
+  operationId: getAggregations
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /view/nationwide/csv
+  method: get
+  operationId: getNationwideCsv
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /view/csv
+  method: get
+  operationId: getCsv
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /view/filers
+  method: get
+  operationId: listFilers
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /public/filers/{year}
+  method: get
+  operationId: listInstitutionsByYear
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /public/institutions/{year}/{lei}
+  method: get
+  operationId: getInstitution
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none

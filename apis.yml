@@ -79,6 +79,8 @@ apis:
       Identifier (LEI). Used by filers and researchers to confirm filer identifiers, registration status, and contact
       info.
 common:
+  - type: AgenticAccess
+    url: agentic-access/consumer-financial-protection-bureau-agentic-access.yml
   - type: DomainSecurity
     url: security/consumer-financial-protection-bureau-domain-security.yml
   - type: LinkedIn
