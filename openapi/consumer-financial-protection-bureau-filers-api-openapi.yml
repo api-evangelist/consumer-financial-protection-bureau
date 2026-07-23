@@ -1,0 +1,47 @@
+openapi: 3.1.0
+info:
+  title: CFPB Consumer Complaint Database Aggregations Filers API
+  description: Public REST + JSON API for searching the Consumer Financial Protection Bureau's Consumer Complaint Database (CCDB), a daily-updated record of complaints submitted by consumers about financial products and services and the companies that respond to them. The API powers the public CCDB search experience at consumerfinance.gov/data-research/consumer-complaints and is documented at cfpb.github.io/ccdb5-api.
+  version: '1'
+  contact:
+    name: CFPB Open Tech
+    url: https://cfpb.github.io/
+  license:
+    name: Creative Commons CC0 1.0 Universal
+    url: https://creativecommons.org/publicdomain/zero/1.0/
+servers:
+- url: https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1
+  description: Production CCDB search API
+tags:
+- name: Filers
+paths:
+  /view/filers:
+    get:
+      operationId: listFilers
+      summary: List HMDA filers
+      tags:
+      - Filers
+      parameters:
+      - $ref: '#/components/parameters/Years'
+      - name: states
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+      responses:
+        '200':
+          description: Institutions that filed for the requested year
+          content:
+            application/json: {}
+components:
+  parameters:
+    Years:
+      name: years
+      in: query
+      required: true
+      schema:
+        type: array
+        items:
+          type: integer
+          minimum: 2018

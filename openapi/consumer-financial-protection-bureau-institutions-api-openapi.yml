@@ -1,30 +1,33 @@
 openapi: 3.1.0
 info:
-  title: CFPB HMDA Institutions API
-  description: >-
-    The HMDA Platform Institutions API returns the financial institutions
-    registered to file Home Mortgage Disclosure Act data with the CFPB,
-    keyed by year and LEI. It is used by filers and researchers to
-    confirm filer identifiers, registration status, and contact info.
-  version: '2'
+  title: CFPB Consumer Complaint Database Aggregations Institutions API
+  description: Public REST + JSON API for searching the Consumer Financial Protection Bureau's Consumer Complaint Database (CCDB), a daily-updated record of complaints submitted by consumers about financial products and services and the companies that respond to them. The API powers the public CCDB search experience at consumerfinance.gov/data-research/consumer-complaints and is documented at cfpb.github.io/ccdb5-api.
+  version: '1'
   contact:
-    name: HMDA Operations
-    url: https://ffiec.cfpb.gov/
+    name: CFPB Open Tech
+    url: https://cfpb.github.io/
+  license:
+    name: Creative Commons CC0 1.0 Universal
+    url: https://creativecommons.org/publicdomain/zero/1.0/
 servers:
-  - url: https://ffiec.cfpb.gov/v2
-    description: Production HMDA Platform
+- url: https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1
+  description: Production CCDB search API
+tags:
+- name: Institutions
 paths:
   /public/filers/{year}:
     get:
       operationId: listInstitutionsByYear
       summary: List all institutions that filed HMDA data for a year
       tags:
-        - Institutions
+      - Institutions
       parameters:
-        - name: year
-          in: path
-          required: true
-          schema: { type: integer, minimum: 2018 }
+      - name: year
+        in: path
+        required: true
+        schema:
+          type: integer
+          minimum: 2018
       responses:
         '200':
           description: List of filers
@@ -42,16 +45,20 @@ paths:
       operationId: getInstitution
       summary: Get a single institution by year and LEI
       tags:
-        - Institutions
+      - Institutions
       parameters:
-        - name: year
-          in: path
-          required: true
-          schema: { type: integer }
-        - name: lei
-          in: path
-          required: true
-          schema: { type: string, minLength: 20, maxLength: 20 }
+      - name: year
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: lei
+        in: path
+        required: true
+        schema:
+          type: string
+          minLength: 20
+          maxLength: 20
       responses:
         '200':
           description: Institution detail
@@ -85,14 +92,19 @@ components:
         respondent:
           type: object
           properties:
-            name: { type: string }
-            state: { type: string }
-            city: { type: string }
+            name:
+              type: string
+            state:
+              type: string
+            city:
+              type: string
         parent:
           type: object
           properties:
-            idRssd: { type: integer }
-            name: { type: string }
+            idRssd:
+              type: integer
+            name:
+              type: string
         assets:
           type: integer
         otherLenderCode:

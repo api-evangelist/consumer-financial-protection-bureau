@@ -1,0 +1,67 @@
+openapi: 3.1.0
+info:
+  title: CFPB Consumer Complaint Database Aggregations Trends API
+  description: Public REST + JSON API for searching the Consumer Financial Protection Bureau's Consumer Complaint Database (CCDB), a daily-updated record of complaints submitted by consumers about financial products and services and the companies that respond to them. The API powers the public CCDB search experience at consumerfinance.gov/data-research/consumer-complaints and is documented at cfpb.github.io/ccdb5-api.
+  version: '1'
+  contact:
+    name: CFPB Open Tech
+    url: https://cfpb.github.io/
+  license:
+    name: Creative Commons CC0 1.0 Universal
+    url: https://creativecommons.org/publicdomain/zero/1.0/
+servers:
+- url: https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1
+  description: Production CCDB search API
+tags:
+- name: Trends
+paths:
+  /trends/:
+    get:
+      operationId: getTrends
+      summary: Aggregated complaint trends
+      description: Returns aggregated complaint counts grouped by lens (product, issue, company, etc).
+      tags:
+      - Trends
+      parameters:
+      - name: lens
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - overview
+          - product
+          - sub_product
+          - issue
+          - company
+          - tags
+      - name: trend_depth
+        in: query
+        schema:
+          type: integer
+          default: 5
+      - name: trend_interval
+        in: query
+        schema:
+          type: string
+          enum:
+          - day
+          - week
+          - month
+          - quarter
+          - year
+      - name: date_received_min
+        in: query
+        schema:
+          type: string
+          format: date
+      - name: date_received_max
+        in: query
+        schema:
+          type: string
+          format: date
+      responses:
+        '200':
+          description: Aggregated trends
+          content:
+            application/json: {}
