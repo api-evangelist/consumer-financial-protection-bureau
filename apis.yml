@@ -11,7 +11,19 @@ tags:
   - Mortgages
   - Open Data
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/consumer-financial-protection-bureau.png
 access: 3rd-Party
 created: '2024-11-25'
 modified: '2026-05-19'
@@ -24,60 +36,136 @@ description: >-
   CFPB Open Tech program publishes the Consumer Complaint Database (CCDB) search API and the HMDA Platform's Data
   Browser and Institutions APIs at ffiec.cfpb.gov, all unauthenticated and CC0-licensed for public use.
 apis:
-  - aid: consumer-financial-protection-bureau:ccdb
-    name: Consumer Complaint Database API
-    tags:
-      - Complaints
-      - Consumer Protection
-      - Open Data
-      - Search
-    humanURL: https://www.consumerfinance.gov/data-research/consumer-complaints/
-    baseURL: https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1
-    properties:
-      - url: https://cfpb.github.io/api/ccdb/
-        type: Documentation
-      - url: https://github.com/cfpb/ccdb5-api
-        type: GitHubRepository
-      - url: openapi/cfpb-ccdb-openapi.yml
-        type: OpenAPI
-    description: >-
-      Public REST + JSON search API for the Consumer Complaint Database, a daily-updated record of complaints submitted
-      by U.S. consumers about financial products and services. Supports full-text search, complaint detail lookups,
-      faceted aggregations, autocomplete, geo breakdowns by state, and CSV export. No API key required.
-  - aid: consumer-financial-protection-bureau:hmda-data-browser
-    name: HMDA Data Browser API
-    tags:
-      - HMDA
-      - Mortgages
-      - Open Data
-    humanURL: https://ffiec.cfpb.gov/documentation/api/data-browser/
-    baseURL: https://ffiec.cfpb.gov/v2/data-browser-api
-    properties:
-      - url: https://ffiec.cfpb.gov/documentation/api/data-browser/
-        type: Documentation
-      - url: openapi/cfpb-hmda-data-browser-openapi.yml
-        type: OpenAPI
-    description: >-
-      The HMDA Data Browser API exposes Home Mortgage Disclosure Act submission data with both nationwide and filtered
-      (LEI, state, county, MSA/MD) aggregation reports as JSON, plus raw CSV streams and an HMDA filer lookup. Used by
-      researchers, fair-lending analysts, and journalists.
-  - aid: consumer-financial-protection-bureau:hmda-institutions
-    name: HMDA Institutions API
-    tags:
-      - HMDA
-      - Institutions
-      - Open Data
-    humanURL: https://ffiec.cfpb.gov/documentation/api/institutions-api/
-    baseURL: https://ffiec.cfpb.gov/v2
-    properties:
-      - url: https://ffiec.cfpb.gov/documentation/api/institutions-api/
-        type: Documentation
-      - url: openapi/cfpb-hmda-institutions-openapi.yml
-        type: OpenAPI
-    description: >-
-      Returns the financial institutions registered to file HMDA data with the CFPB, keyed by year and Legal Entity
-      Identifier (LEI). Used by filers and researchers to confirm filer identifiers, registration status, and contact
-      info.
+- aid: >-
+    consumer-financial-protection-bureau:consumer-financial-protection-bureau-aggregations-api
+  name: Consumer Financial Protection Bureau Aggregations API
+  description: >-
+    The Aggregations API from Consumer Financial Protection Bureau — 2 operation(s) for aggregations.
+  humanURL: https://www.consumerfinance.gov/data-research/consumer-complaints/
+  baseURL: https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1
+  tags:
+  - Aggregations
+  properties:
+  - type: OpenAPI
+    url: openapi/consumer-financial-protection-bureau-aggregations-api-openapi.yml
+  - type: Documentation
+    url: https://cfpb.github.io/api/ccdb/
+  - type: GitHubRepository
+    url: https://github.com/cfpb/ccdb5-api
+  - type: Documentation
+    url: https://ffiec.cfpb.gov/documentation/api/data-browser/
+  - type: Documentation
+    url: https://ffiec.cfpb.gov/documentation/api/institutions-api/
+- aid: consumer-financial-protection-bureau:consumer-financial-protection-bureau-csv-api
+  name: Consumer Financial Protection Bureau CSV API
+  description: The CSV API from Consumer Financial Protection Bureau — 2 operation(s) for csv.
+  humanURL: https://www.consumerfinance.gov/data-research/consumer-complaints/
+  baseURL: https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1
+  tags:
+  - CSV
+  properties:
+  - type: OpenAPI
+    url: openapi/consumer-financial-protection-bureau-csv-api-openapi.yml
+  - type: Documentation
+    url: https://cfpb.github.io/api/ccdb/
+  - type: GitHubRepository
+    url: https://github.com/cfpb/ccdb5-api
+  - type: Documentation
+    url: https://ffiec.cfpb.gov/documentation/api/data-browser/
+  - type: Documentation
+    url: https://ffiec.cfpb.gov/documentation/api/institutions-api/
+- aid: consumer-financial-protection-bureau:consumer-financial-protection-bureau-filers-api
+  name: Consumer Financial Protection Bureau Filers API
+  description: The Filers API from Consumer Financial Protection Bureau — 1 operation(s) for filers.
+  humanURL: https://www.consumerfinance.gov/data-research/consumer-complaints/
+  baseURL: https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1
+  tags:
+  - Filers
+  properties:
+  - type: OpenAPI
+    url: openapi/consumer-financial-protection-bureau-filers-api-openapi.yml
+  - type: Documentation
+    url: https://cfpb.github.io/api/ccdb/
+  - type: GitHubRepository
+    url: https://github.com/cfpb/ccdb5-api
+  - type: Documentation
+    url: https://ffiec.cfpb.gov/documentation/api/data-browser/
+  - type: Documentation
+    url: https://ffiec.cfpb.gov/documentation/api/institutions-api/
+- aid: consumer-financial-protection-bureau:consumer-financial-protection-bureau-geo-api
+  name: Consumer Financial Protection Bureau Geo API
+  description: The Geo API from Consumer Financial Protection Bureau — 1 operation(s) for geo.
+  humanURL: https://www.consumerfinance.gov/data-research/consumer-complaints/
+  baseURL: https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1
+  tags:
+  - Geo
+  properties:
+  - type: OpenAPI
+    url: openapi/consumer-financial-protection-bureau-geo-api-openapi.yml
+  - type: Documentation
+    url: https://cfpb.github.io/api/ccdb/
+  - type: GitHubRepository
+    url: https://github.com/cfpb/ccdb5-api
+  - type: Documentation
+    url: https://ffiec.cfpb.gov/documentation/api/data-browser/
+  - type: Documentation
+    url: https://ffiec.cfpb.gov/documentation/api/institutions-api/
+- aid: >-
+    consumer-financial-protection-bureau:consumer-financial-protection-bureau-institutions-api
+  name: Consumer Financial Protection Bureau Institutions API
+  description: >-
+    The Institutions API from Consumer Financial Protection Bureau — 2 operation(s) for institutions.
+  humanURL: https://www.consumerfinance.gov/data-research/consumer-complaints/
+  baseURL: https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1
+  tags:
+  - Institutions
+  properties:
+  - type: OpenAPI
+    url: openapi/consumer-financial-protection-bureau-institutions-api-openapi.yml
+  - type: Documentation
+    url: https://cfpb.github.io/api/ccdb/
+  - type: GitHubRepository
+    url: https://github.com/cfpb/ccdb5-api
+  - type: Documentation
+    url: https://ffiec.cfpb.gov/documentation/api/data-browser/
+  - type: Documentation
+    url: https://ffiec.cfpb.gov/documentation/api/institutions-api/
+- aid: consumer-financial-protection-bureau:consumer-financial-protection-bureau-search-api
+  name: Consumer Financial Protection Bureau Search API
+  description: The Search API from Consumer Financial Protection Bureau — 3 operation(s) for search.
+  humanURL: https://www.consumerfinance.gov/data-research/consumer-complaints/
+  baseURL: https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1
+  tags:
+  - Search
+  properties:
+  - type: OpenAPI
+    url: openapi/consumer-financial-protection-bureau-search-api-openapi.yml
+  - type: Documentation
+    url: https://cfpb.github.io/api/ccdb/
+  - type: GitHubRepository
+    url: https://github.com/cfpb/ccdb5-api
+  - type: Documentation
+    url: https://ffiec.cfpb.gov/documentation/api/data-browser/
+  - type: Documentation
+    url: https://ffiec.cfpb.gov/documentation/api/institutions-api/
+- aid: consumer-financial-protection-bureau:consumer-financial-protection-bureau-trends-api
+  name: Consumer Financial Protection Bureau Trends API
+  description: The Trends API from Consumer Financial Protection Bureau — 1 operation(s) for trends.
+  humanURL: https://www.consumerfinance.gov/data-research/consumer-complaints/
+  baseURL: https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1
+  tags:
+  - Trends
+  properties:
+  - type: OpenAPI
+    url: openapi/consumer-financial-protection-bureau-trends-api-openapi.yml
+  - type: Documentation
+    url: https://cfpb.github.io/api/ccdb/
+  - type: GitHubRepository
+    url: https://github.com/cfpb/ccdb5-api
+  - type: Documentation
+    url: https://ffiec.cfpb.gov/documentation/api/data-browser/
+  - type: Documentation
+    url: https://ffiec.cfpb.gov/documentation/api/institutions-api/
 common:
   - type: AgenticAccess
     url: agentic-access/consumer-financial-protection-bureau-agentic-access.yml
