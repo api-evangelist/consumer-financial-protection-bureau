@@ -1,0 +1,26 @@
+{
+  "provider": "consumer-financial-protection-bureau",
+  "sources": [
+    "consumer-financial-protection-bureau-aggregations-api-openapi.yml",
+    "consumer-financial-protection-bureau-csv-api-openapi.yml",
+    "consumer-financial-protection-bureau-filers-api-openapi.yml",
+    "consumer-financial-protection-bureau-geo-api-openapi.yml",
+    "consumer-financial-protection-bureau-institutions-api-openapi.yml",
+    "consumer-financial-protection-bureau-search-api-openapi.yml",
+    "consumer-financial-protection-bureau-trends-api-openapi.yml"
+  ],
+  "outputs": [
+    "consumer-financial-protection-bureau-aggregations-api-openapi.yml",
+    "consumer-financial-protection-bureau-csv-api-openapi.yml",
+    "consumer-financial-protection-bureau-filers-api-openapi.yml",
+    "consumer-financial-protection-bureau-geo-api-openapi.yml",
+    "consumer-financial-protection-bureau-institutions-api-openapi.yml",
+    "consumer-financial-protection-bureau-search-api-openapi.yml",
+    "consumer-financial-protection-bureau-trends-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

@@ -1,0 +1,222 @@
+openapi: 3.1.0
+info:
+  title: CFPB Consumer Complaint Database API
+  description: >-
+    Public REST + JSON API for searching the Consumer Financial Protection
+    Bureau's Consumer Complaint Database (CCDB), a daily-updated record of
+    complaints submitted by consumers about financial products and services
+    and the companies that respond to them. The API powers the public CCDB
+    search experience at consumerfinance.gov/data-research/consumer-complaints
+    and is documented at cfpb.github.io/ccdb5-api.
+  version: '1'
+  contact:
+    name: CFPB Open Tech
+    url: https://cfpb.github.io/
+  license:
+    name: Creative Commons CC0 1.0 Universal
+    url: https://creativecommons.org/publicdomain/zero/1.0/
+servers:
+  - url: https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1
+    description: Production CCDB search API
+paths:
+  /:
+    get:
+      operationId: searchComplaints
+      summary: Search complaints
+      description: >-
+        Full-text search across the Consumer Complaint Database with
+        faceted filters and pagination.
+      tags:
+        - Search
+      parameters:
+        - name: search_term
+          in: query
+          schema: { type: string }
+          description: Free-text search across complaint narratives.
+        - name: field
+          in: query
+          schema: { type: string, enum: [all, complaint_what_happened, company_public_response] }
+        - name: frm
+          in: query
+          schema: { type: integer, default: 0 }
+          description: Result offset (0-based).
+        - name: size
+          in: query
+          schema: { type: integer, default: 25, maximum: 100 }
+        - name: sort
+          in: query
+          schema:
+            type: string
+            enum: [relevance_desc, relevance_asc, created_date_desc, created_date_asc]
+        - name: format
+          in: query
+          schema: { type: string, enum: [json, csv] }
+        - name: date_received_min
+          in: query
+          schema: { type: string, format: date }
+        - name: date_received_max
+          in: query
+          schema: { type: string, format: date }
+        - name: company
+          in: query
+          schema: { type: array, items: { type: string } }
+        - name: product
+          in: query
+          schema: { type: array, items: { type: string } }
+        - name: state
+          in: query
+          schema: { type: array, items: { type: string, minLength: 2, maxLength: 2 } }
+        - name: tags
+          in: query
+          schema: { type: array, items: { type: string } }
+      responses:
+        '200':
+          description: Matching complaints
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResponse'
+            text/csv: {}
+  /{complaintId}/:
+    get:
+      operationId: getComplaint
+      summary: Get a single complaint by ID
+      tags:
+        - Search
+      parameters:
+        - name: complaintId
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: A single complaint
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Complaint'
+        '404':
+          description: Not found
+  /trends/:
+    get:
+      operationId: getTrends
+      summary: Aggregated complaint trends
+      description: Returns aggregated complaint counts grouped by lens (product, issue, company, etc).
+      tags:
+        - Trends
+      parameters:
+        - name: lens
+          in: query
+          required: true
+          schema: { type: string, enum: [overview, product, sub_product, issue, company, tags] }
+        - name: trend_depth
+          in: query
+          schema: { type: integer, default: 5 }
+        - name: trend_interval
+          in: query
+          schema: { type: string, enum: [day, week, month, quarter, year] }
+        - name: date_received_min
+          in: query
+          schema: { type: string, format: date }
+        - name: date_received_max
+          in: query
+          schema: { type: string, format: date }
+      responses:
+        '200':
+          description: Aggregated trends
+          content:
+            application/json: {}
+  /geo/states/:
+    get:
+      operationId: getGeoStates
+      summary: Aggregated complaint counts by state
+      tags:
+        - Geo
+      responses:
+        '200':
+          description: Per-state aggregation
+          content:
+            application/json: {}
+  /suggest/:
+    get:
+      operationId: getSuggestions
+      summary: Autocomplete suggestions
+      tags:
+        - Search
+      parameters:
+        - name: text
+          in: query
+          required: true
+          schema: { type: string }
+        - name: size
+          in: query
+          schema: { type: integer, default: 10 }
+      responses:
+        '200':
+          description: Suggestion list
+          content:
+            application/json: {}
+components:
+  schemas:
+    Complaint:
+      type: object
+      properties:
+        complaint_id:
+          type: string
+        date_received:
+          type: string
+          format: date
+        date_sent_to_company:
+          type: string
+          format: date
+        product:
+          type: string
+        sub_product:
+          type: string
+        issue:
+          type: string
+        sub_issue:
+          type: string
+        company:
+          type: string
+        company_response:
+          type: string
+        company_public_response:
+          type: string
+        consumer_consent_provided:
+          type: string
+        consumer_disputed:
+          type: string
+        complaint_what_happened:
+          type: string
+        state:
+          type: string
+        zip_code:
+          type: string
+        tags:
+          type: string
+        timely:
+          type: string
+        submitted_via:
+          type: string
+    SearchResponse:
+      type: object
+      properties:
+        hits:
+          type: object
+          properties:
+            total:
+              type: object
+              properties:
+                value: { type: integer }
+                relation: { type: string }
+            hits:
+              type: array
+              items:
+                type: object
+                properties:
+                  _source: { $ref: '#/components/schemas/Complaint' }
+                  _id: { type: string }
+                  _score: { type: number }
+        aggregations:
+          type: object
