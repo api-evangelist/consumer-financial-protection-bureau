@@ -167,6 +167,15 @@ apis:
   - type: Documentation
     url: https://ffiec.cfpb.gov/documentation/api/institutions-api/
 common:
+  - type: IssueTracker
+    url: https://github.com/cfpb/ccdb5-api/issues
+  - type: Releases
+    url: https://github.com/cfpb/ccdb5-api/releases
+  - type: ContributionGuide
+    url: https://github.com/cfpb/ccdb5-api/blob/main/CONTRIBUTING.md
+  - type: License
+    name: CC0-1.0
+    url: https://github.com/cfpb/ccdb5-api/blob/main/LICENSE
   - type: AgenticAccess
     url: agentic-access/consumer-financial-protection-bureau-agentic-access.yml
   - type: DomainSecurity
