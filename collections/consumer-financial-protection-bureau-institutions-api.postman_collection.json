@@ -1,0 +1,269 @@
+{
+  "item": [
+    {
+      "id": "a36c8917-e657-4cb4-9f05-e14d5d01b99c",
+      "name": "Institutions",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f32ee5e7-7444-4258-a9c2-0c80b332aaae",
+          "name": "List all institutions that filed HMDA data for a year",
+          "request": {
+            "name": "List all institutions that filed HMDA data for a year",
+            "description": {},
+            "url": {
+              "path": [
+                "public",
+                "filers",
+                ":year"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "year",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9f2d3cab-6d65-40bf-9e8f-f72086cd03dc",
+              "name": "List of filers",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "public",
+                    "filers",
+                    ":year"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "year",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"institutions\": [\n    {\n      \"lei\": \"stringstringstringst\",\n      \"activityYear\": 970,\n      \"agency\": 7956,\n      \"institutionType\": \"string\",\n      \"institutionId2017\": \"string\",\n      \"taxId\": \"string\",\n      \"rssd\": 617,\n      \"respondent\": {\n        \"name\": \"string\",\n        \"state\": \"string\",\n        \"city\": \"string\"\n      },\n      \"parent\": {\n        \"idRssd\": 2312,\n        \"name\": \"string\"\n      },\n      \"assets\": 2305,\n      \"otherLenderCode\": 6947,\n      \"topHolder\": {},\n      \"hmdaFiler\": true,\n      \"quarterlyFiler\": false,\n      \"quarterlyFilerHasFiledQ1\": false,\n      \"quarterlyFilerHasFiledQ2\": true,\n      \"quarterlyFilerHasFiledQ3\": false\n    },\n    {\n      \"lei\": \"stringstringstringst\",\n      \"activityYear\": 4983,\n      \"agency\": 5363,\n      \"institutionType\": \"string\",\n      \"institutionId2017\": \"string\",\n      \"taxId\": \"string\",\n      \"rssd\": 9594,\n      \"respondent\": {\n        \"name\": \"string\",\n        \"state\": \"string\",\n        \"city\": \"string\"\n      },\n      \"parent\": {\n        \"idRssd\": 4930,\n        \"name\": \"string\"\n      },\n      \"assets\": 5084,\n      \"otherLenderCode\": 6855,\n      \"topHolder\": {},\n      \"hmdaFiler\": true,\n      \"quarterlyFiler\": true,\n      \"quarterlyFilerHasFiledQ1\": true,\n      \"quarterlyFilerHasFiledQ2\": true,\n      \"quarterlyFilerHasFiledQ3\": true\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e6047bba-7809-46ec-8833-9436e3a8f1cd",
+          "name": "Get a single institution by year and LEI",
+          "request": {
+            "name": "Get a single institution by year and LEI",
+            "description": {},
+            "url": {
+              "path": [
+                "public",
+                "institutions",
+                ":year",
+                ":lei"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "year",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "lei",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dc6564f1-0439-4739-990d-344b800f4466",
+              "name": "Institution detail",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "public",
+                    "institutions",
+                    ":year",
+                    ":lei"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "year",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "lei",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"lei\": \"stringstringstringst\",\n  \"activityYear\": 5052,\n  \"agency\": 4353,\n  \"institutionType\": \"string\",\n  \"institutionId2017\": \"string\",\n  \"taxId\": \"string\",\n  \"rssd\": 3512,\n  \"respondent\": {\n    \"name\": \"string\",\n    \"state\": \"string\",\n    \"city\": \"string\"\n  },\n  \"parent\": {\n    \"idRssd\": 4891,\n    \"name\": \"string\"\n  },\n  \"assets\": 2688,\n  \"otherLenderCode\": 1302,\n  \"topHolder\": {},\n  \"hmdaFiler\": true,\n  \"quarterlyFiler\": false,\n  \"quarterlyFilerHasFiledQ1\": false,\n  \"quarterlyFilerHasFiledQ2\": false,\n  \"quarterlyFilerHasFiledQ3\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b5834b50-73f0-4ad8-9023-af97f523e2e9",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "public",
+                    "institutions",
+                    ":year",
+                    ":lei"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "year",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "lei",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "920b54f5-20e4-491e-ad0f-e546f768a985",
+    "name": "CFPB Consumer Complaint Database Aggregations Institutions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Public REST + JSON API for searching the Consumer Financial Protection Bureau's Consumer Complaint Database (CCDB), a daily-updated record of complaints submitted by consumers about financial products and services and the companies that respond to them. The API powers the public CCDB search experience at consumerfinance.gov/data-research/consumer-complaints and is documented at cfpb.github.io/ccdb5-api.\n\nContact Support:\n Name: CFPB Open Tech",
+      "type": "text/plain"
+    }
+  }
+}

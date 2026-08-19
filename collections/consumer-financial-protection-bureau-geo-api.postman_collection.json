@@ -1,0 +1,103 @@
+{
+  "item": [
+    {
+      "id": "7fb371c7-b22e-42d3-ac85-455cc8ab702e",
+      "name": "Geo",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "cf176efb-1ba1-4710-b0d6-fdd2752b4515",
+          "name": "Aggregated complaint counts by state",
+          "request": {
+            "name": "Aggregated complaint counts by state",
+            "description": {},
+            "url": {
+              "path": [
+                "geo",
+                "states",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "38e6acb3-f020-4ff6-8150-13de111eceb1",
+              "name": "Per-state aggregation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "geo",
+                    "states",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "2bee6b46-cd06-4cf1-84de-4598b2934b33",
+    "name": "CFPB Consumer Complaint Database Aggregations Geo API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Public REST + JSON API for searching the Consumer Financial Protection Bureau's Consumer Complaint Database (CCDB), a daily-updated record of complaints submitted by consumers about financial products and services and the companies that respond to them. The API powers the public CCDB search experience at consumerfinance.gov/data-research/consumer-complaints and is documented at cfpb.github.io/ccdb5-api.\n\nContact Support:\n Name: CFPB Open Tech",
+      "type": "text/plain"
+    }
+  }
+}

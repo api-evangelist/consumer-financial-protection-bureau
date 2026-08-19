@@ -1,0 +1,74 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "CFPB Consumer Complaint Database Aggregations CSV API",
+    "version": "1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "CSV",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Stream nationwide HMDA records as CSV",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1/view/nationwide/csv",
+            "params": [
+              {
+                "name": "years",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "actions_taken",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Stream nationwide HMDA records as CSV"
+        },
+        {
+          "info": {
+            "name": "Stream HMDA records as CSV by LEI/geography",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1/view/csv",
+            "params": [
+              {
+                "name": "years",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "leis",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "states",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "counties",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Stream HMDA records as CSV by LEI/geography"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

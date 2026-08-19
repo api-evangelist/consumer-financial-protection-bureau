@@ -1,0 +1,288 @@
+{
+  "item": [
+    {
+      "id": "91a89f41-30e7-4579-a1ba-6eef1d4ab180",
+      "name": "CSV",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "809161f1-36fb-4dcd-90b0-a886acf249da",
+          "name": "Stream nationwide HMDA records as CSV",
+          "request": {
+            "name": "Stream nationwide HMDA records as CSV",
+            "description": {},
+            "url": {
+              "path": [
+                "view",
+                "nationwide",
+                "csv"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "years",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "years",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "actions_taken",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "actions_taken",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/csv"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e616fe8e-71eb-48c0-9df3-d66baa505e8a",
+              "name": "CSV stream of HMDA records",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "view",
+                    "nationwide",
+                    "csv"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "years",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "years",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "actions_taken",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "actions_taken",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/csv"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/csv"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f9fb790a-0d22-441d-bc1a-e229763596a5",
+          "name": "Stream HMDA records as CSV by LEI/geography",
+          "request": {
+            "name": "Stream HMDA records as CSV by LEI/geography",
+            "description": {},
+            "url": {
+              "path": [
+                "view",
+                "csv"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "years",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "years",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "leis",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "leis",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "states",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "states",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "counties",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "counties",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/csv"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e023b852-b15c-4f16-93a0-e1e9cceb26d6",
+              "name": "CSV stream",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "view",
+                    "csv"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "years",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "years",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "leis",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "leis",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "states",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "states",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "counties",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "counties",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/csv"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/csv"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "f852d32a-f253-4dff-8f99-84982fc23c34",
+    "name": "CFPB Consumer Complaint Database Aggregations CSV API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Public REST + JSON API for searching the Consumer Financial Protection Bureau's Consumer Complaint Database (CCDB), a daily-updated record of complaints submitted by consumers about financial products and services and the companies that respond to them. The API powers the public CCDB search experience at consumerfinance.gov/data-research/consumer-complaints and is documented at cfpb.github.io/ccdb5-api.\n\nContact Support:\n Name: CFPB Open Tech",
+      "type": "text/plain"
+    }
+  }
+}

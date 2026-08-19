@@ -1,0 +1,56 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "CFPB Consumer Complaint Database Aggregations Trends API",
+    "version": "1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Trends",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Aggregated complaint trends",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1/trends/",
+            "params": [
+              {
+                "name": "lens",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "trend_depth",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "trend_interval",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "date_received_min",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "date_received_max",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns aggregated complaint counts grouped by lens (product, issue, company, etc)."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

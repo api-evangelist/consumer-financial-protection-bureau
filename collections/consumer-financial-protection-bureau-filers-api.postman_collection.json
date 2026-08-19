@@ -1,0 +1,141 @@
+{
+  "item": [
+    {
+      "id": "958a2cf0-ff68-45f7-bcaf-d971bfa30a80",
+      "name": "Filers",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "063357eb-2482-4eaf-805e-3eaef5209df2",
+          "name": "List HMDA filers",
+          "request": {
+            "name": "List HMDA filers",
+            "description": {},
+            "url": {
+              "path": [
+                "view",
+                "filers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "years",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "years",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "states",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "states",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cc7f92ef-b687-41c7-bc32-c942f55dc9af",
+              "name": "Institutions that filed for the requested year",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "view",
+                    "filers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "years",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "years",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "states",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "states",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "a5b8d7b2-5729-4d5f-afb4-f3e1063c22ca",
+    "name": "CFPB Consumer Complaint Database Aggregations Filers API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Public REST + JSON API for searching the Consumer Financial Protection Bureau's Consumer Complaint Database (CCDB), a daily-updated record of complaints submitted by consumers about financial products and services and the companies that respond to them. The API powers the public CCDB search experience at consumerfinance.gov/data-research/consumer-complaints and is documented at cfpb.github.io/ccdb5-api.\n\nContact Support:\n Name: CFPB Open Tech",
+      "type": "text/plain"
+    }
+  }
+}

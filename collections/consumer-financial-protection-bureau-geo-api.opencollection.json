@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "CFPB Consumer Complaint Database Aggregations Geo API",
+    "version": "1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Geo",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Aggregated complaint counts by state",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1/geo/states/"
+          },
+          "docs": "Aggregated complaint counts by state"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

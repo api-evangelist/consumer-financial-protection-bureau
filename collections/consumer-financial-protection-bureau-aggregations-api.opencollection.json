@@ -1,0 +1,114 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "CFPB Consumer Complaint Database Aggregations API",
+    "version": "1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Aggregations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Nationwide aggregation report",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1/view/nationwide/aggregations",
+            "params": [
+              {
+                "name": "years",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "actions_taken",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "loan_types",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "loan_purposes",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "races",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "ethnicities",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sexes",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Aggregated HMDA totals across the entire United States for a given year and filter set."
+        },
+        {
+          "info": {
+            "name": "Aggregation report by LEI or geography",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1/view/aggregations",
+            "params": [
+              {
+                "name": "years",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "leis",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "states",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "msamds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "counties",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "actions_taken",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "loan_types",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Aggregation report by LEI or geography"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,152 @@
+{
+  "item": [
+    {
+      "id": "24ccde4b-ece7-4ec9-8042-4ed27e23e333",
+      "name": "Trends",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e114f65c-b98b-41fa-bff1-fb0ea2159b5a",
+          "name": "Aggregated complaint trends",
+          "request": {
+            "name": "Aggregated complaint trends",
+            "description": {
+              "content": "Returns aggregated complaint counts grouped by lens (product, issue, company, etc).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "trends",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "lens",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "trend_depth",
+                  "value": "5"
+                },
+                {
+                  "disabled": false,
+                  "key": "trend_interval",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "date_received_min",
+                  "value": "<date>"
+                },
+                {
+                  "disabled": false,
+                  "key": "date_received_max",
+                  "value": "<date>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "52172d16-559e-459d-bf81-faaa8c1b5603",
+              "name": "Aggregated trends",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trends",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lens",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "trend_depth",
+                      "value": "5"
+                    },
+                    {
+                      "key": "trend_interval",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "date_received_min",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "date_received_max",
+                      "value": "<date>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "7b031f67-99e1-4c34-9208-81872dac3c05",
+    "name": "CFPB Consumer Complaint Database Aggregations Trends API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Public REST + JSON API for searching the Consumer Financial Protection Bureau's Consumer Complaint Database (CCDB), a daily-updated record of complaints submitted by consumers about financial products and services and the companies that respond to them. The API powers the public CCDB search experience at consumerfinance.gov/data-research/consumer-complaints and is documented at cfpb.github.io/ccdb5-api.\n\nContact Support:\n Name: CFPB Open Tech",
+      "type": "text/plain"
+    }
+  }
+}

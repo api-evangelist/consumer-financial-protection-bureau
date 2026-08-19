@@ -1,0 +1,41 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "CFPB Consumer Complaint Database Aggregations Filers API",
+    "version": "1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Filers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List HMDA filers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1/view/filers",
+            "params": [
+              {
+                "name": "years",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "states",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List HMDA filers"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

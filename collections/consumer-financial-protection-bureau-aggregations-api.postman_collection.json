@@ -1,0 +1,435 @@
+{
+  "item": [
+    {
+      "id": "47d39ee3-a4bd-4727-92c1-1d35dbe0417b",
+      "name": "Aggregations",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5e80b8a1-0160-4a81-afe5-5f25711a6e44",
+          "name": "Nationwide aggregation report",
+          "request": {
+            "name": "Nationwide aggregation report",
+            "description": {
+              "content": "Aggregated HMDA totals across the entire United States for a given year and filter set.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "view",
+                "nationwide",
+                "aggregations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "years",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "years",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "actions_taken",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "actions_taken",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "loan_types",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "loan_types",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "loan_purposes",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "loan_purposes",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "races",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "races",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "ethnicities",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "ethnicities",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sexes",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sexes",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c944159e-2729-45ef-984e-f5ee674461f4",
+              "name": "Aggregations",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "view",
+                    "nationwide",
+                    "aggregations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "years",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "years",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "actions_taken",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "actions_taken",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "loan_types",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "loan_types",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "loan_purposes",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "loan_purposes",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "races",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "races",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ethnicities",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ethnicities",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sexes",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sexes",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a1502d8f-c2ce-4623-8d16-864f92ce64c2",
+          "name": "Aggregation report by LEI or geography",
+          "request": {
+            "name": "Aggregation report by LEI or geography",
+            "description": {},
+            "url": {
+              "path": [
+                "view",
+                "aggregations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "years",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "years",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "leis",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "leis",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "states",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "states",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "msamds",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "msamds",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "counties",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "counties",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "actions_taken",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "actions_taken",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "loan_types",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "loan_types",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2a61670e-841f-4ad8-95f9-0511b9091776",
+              "name": "Aggregations",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "view",
+                    "aggregations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "years",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "years",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "leis",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "leis",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "states",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "states",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "msamds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "msamds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "counties",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "counties",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "actions_taken",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "actions_taken",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "loan_types",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "loan_types",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "7b8d4efe-35c1-4b21-8416-dfde91ba8a9f",
+    "name": "CFPB Consumer Complaint Database Aggregations API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Public REST + JSON API for searching the Consumer Financial Protection Bureau's Consumer Complaint Database (CCDB), a daily-updated record of complaints submitted by consumers about financial products and services and the companies that respond to them. The API powers the public CCDB search experience at consumerfinance.gov/data-research/consumer-complaints and is documented at cfpb.github.io/ccdb5-api.\n\nContact Support:\n Name: CFPB Open Tech",
+      "type": "text/plain"
+    }
+  }
+}
