@@ -28,7 +28,7 @@ access: 3rd-Party
 created: '2024-11-25'
 modified: '2026-05-19'
 position: Consumer
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 kind: government
 description: >-
   The Consumer Financial Protection Bureau (CFPB) is the U.S. federal agency that supervises banks, lenders, and other
