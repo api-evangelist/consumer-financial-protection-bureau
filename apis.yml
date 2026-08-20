@@ -5,6 +5,15 @@ tags:
   - Banking
   - Complaints
   - Consumer Protection
+  - Federal-Government
+  - Financial-Services
+  - HMDA
+  - Mortgages
+  - Open Data
+tags_raw:
+  - Banking
+  - Complaints
+  - Consumer Protection
   - Federal Government
   - Financial Services
   - HMDA
@@ -118,6 +127,8 @@ apis:
   humanURL: https://www.consumerfinance.gov/data-research/consumer-complaints/
   baseURL: https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1
   tags:
+  - institutions
+  tags_raw:
   - Institutions
   properties:
   - type: OpenAPI
