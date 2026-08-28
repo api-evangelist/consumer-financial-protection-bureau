@@ -20,6 +20,20 @@ tags_raw:
   - Mortgages
   - Open Data
 type: Index
+deliveryModel:
+  model: saas
+  license: CC0-1.0
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - license
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: unknown
