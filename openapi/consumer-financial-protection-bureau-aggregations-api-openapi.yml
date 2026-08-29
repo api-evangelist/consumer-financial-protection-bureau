@@ -1,17 +1,14 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: CFPB Consumer Complaint Database Aggregations API
-  description: Public REST + JSON API for searching the Consumer Financial Protection Bureau's Consumer Complaint Database (CCDB), a daily-updated record of complaints submitted by consumers about financial products and services and the companies that respond to them. The API powers the public CCDB search experience at consumerfinance.gov/data-research/consumer-complaints and is documented at cfpb.github.io/ccdb5-api.
-  version: '1'
+  title: CFPB HMDA Data Browser Aggregations API
+  description: The HMDA Data Browser API exposes Home Mortgage Disclosure Act submission data published by the Consumer Financial Protection Bureau. It supports nationwide and filtered aggregation reports as well as raw CSV downloads for research, fair lending analysis, and public reporting.
+  version: '2'
   contact:
-    name: CFPB Open Tech
-    url: https://cfpb.github.io/
-  license:
-    name: Creative Commons CC0 1.0 Universal
-    url: https://creativecommons.org/publicdomain/zero/1.0/
+    name: HMDA Operations
+    url: https://ffiec.cfpb.gov/
 servers:
-- url: https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1
-  description: Production CCDB search API
+- url: https://ffiec.cfpb.gov/v2/data-browser-api
+  description: Production HMDA Data Browser API
 tags:
 - name: Aggregations
 paths:
@@ -85,13 +82,6 @@ components:
         type: array
         items:
           type: string
-    LoanPurposes:
-      name: loan_purposes
-      in: query
-      schema:
-        type: array
-        items:
-          type: integer
     Actions:
       name: actions_taken
       in: query
@@ -101,22 +91,13 @@ components:
           type: integer
           minimum: 1
           maximum: 8
-    Race:
-      name: races
+    Sex:
+      name: sexes
       in: query
       schema:
         type: array
         items:
           type: string
-    Years:
-      name: years
-      in: query
-      required: true
-      schema:
-        type: array
-        items:
-          type: integer
-          minimum: 2018
     LoanTypes:
       name: loan_types
       in: query
@@ -126,8 +107,24 @@ components:
           type: integer
           minimum: 1
           maximum: 4
-    Sex:
-      name: sexes
+    LoanPurposes:
+      name: loan_purposes
+      in: query
+      schema:
+        type: array
+        items:
+          type: integer
+    Years:
+      name: years
+      in: query
+      required: true
+      schema:
+        type: array
+        items:
+          type: integer
+          minimum: 2018
+    Race:
+      name: races
       in: query
       schema:
         type: array

@@ -1,17 +1,14 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: CFPB Consumer Complaint Database Aggregations Institutions API
-  description: Public REST + JSON API for searching the Consumer Financial Protection Bureau's Consumer Complaint Database (CCDB), a daily-updated record of complaints submitted by consumers about financial products and services and the companies that respond to them. The API powers the public CCDB search experience at consumerfinance.gov/data-research/consumer-complaints and is documented at cfpb.github.io/ccdb5-api.
-  version: '1'
+  title: CFPB HMDA Institutions API
+  description: The HMDA Platform Institutions API returns the financial institutions registered to file Home Mortgage Disclosure Act data with the CFPB, keyed by year and LEI. It is used by filers and researchers to confirm filer identifiers, registration status, and contact info.
+  version: '2'
   contact:
-    name: CFPB Open Tech
-    url: https://cfpb.github.io/
-  license:
-    name: Creative Commons CC0 1.0 Universal
-    url: https://creativecommons.org/publicdomain/zero/1.0/
+    name: HMDA Operations
+    url: https://ffiec.cfpb.gov/
 servers:
-- url: https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1
-  description: Production CCDB search API
+- url: https://ffiec.cfpb.gov/v2
+  description: Production HMDA Platform
 tags:
 - name: Institutions
 paths:
