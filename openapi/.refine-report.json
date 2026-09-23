@@ -28,7 +28,8 @@
     "cfpb-hmda-data-browser-openapi.yml: declared missing tag: CSV",
     "cfpb-hmda-data-browser-openapi.yml: declared missing tag: Filers",
     "cfpb-hmda-institutions-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "cfpb-hmda-institutions-openapi.yml: declared missing tag: Institutions"
+    "cfpb-hmda-institutions-openapi.yml: declared missing tag: Institutions",
+    "apis.yml register: already-registered"
   ],
   "skipped": [
     "consumer-financial-protection-bureau-aggregations-api-openapi.yml: previously refined output, superseded by openapi/_original/",

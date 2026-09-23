@@ -75,8 +75,8 @@ paths:
             application/json: {}
 components:
   parameters:
-    Ethnicity:
-      name: ethnicities
+    Race:
+      name: races
       in: query
       schema:
         type: array
@@ -98,6 +98,22 @@ components:
         type: array
         items:
           type: string
+    Years:
+      name: years
+      in: query
+      required: true
+      schema:
+        type: array
+        items:
+          type: integer
+          minimum: 2018
+    Ethnicity:
+      name: ethnicities
+      in: query
+      schema:
+        type: array
+        items:
+          type: string
     LoanTypes:
       name: loan_types
       in: query
@@ -114,19 +130,3 @@ components:
         type: array
         items:
           type: integer
-    Years:
-      name: years
-      in: query
-      required: true
-      schema:
-        type: array
-        items:
-          type: integer
-          minimum: 2018
-    Race:
-      name: races
-      in: query
-      schema:
-        type: array
-        items:
-          type: string

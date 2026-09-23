@@ -59,15 +59,6 @@ paths:
             text/csv: {}
 components:
   parameters:
-    Years:
-      name: years
-      in: query
-      required: true
-      schema:
-        type: array
-        items:
-          type: integer
-          minimum: 2018
     Actions:
       name: actions_taken
       in: query
@@ -77,3 +68,12 @@ components:
           type: integer
           minimum: 1
           maximum: 8
+    Years:
+      name: years
+      in: query
+      required: true
+      schema:
+        type: array
+        items:
+          type: integer
+          minimum: 2018
